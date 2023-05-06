@@ -1,0 +1,25 @@
+Run YOLOv5 detection inference on images, videos, directories, globs, YouTube, webcam, streams, etc.
+Usage - sources:
+    $ python detect.py --weights yolov5s.pt --source 0                               # webcam
+                                                     img.jpg                         # image
+                                                     vid.mp4                         # video
+                                                     screen                          # screenshot
+                                                     path/                           # directory
+                                                     list.txt                        # list of images
+                                                     list.streams                    # list of streams
+                                                     'path/*.jpg'                    # glob
+                                                     'https://youtu.be/Zgi9g1ksQHc'  # YouTube
+                                                     'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
+
+
+Am observat ca OBJECT-urile care ne-au fost cerute sa le detectam fac parte deja din dataset-ul COCO. Asta ma face sa cred ca nu mai trebuie
+sa reantrenam modelul yolov5s cu imaginile noastre generate de AI.
+
+!!! DE RULAT DIN YOLOV5 ENVIRONMENT
+
+python detect.py --weights yolov5s.pt --img-size 512 --conf-thres 0.7 --source ../../generative_AI_navy_zebra/navy_zebra_images --save-txt --exist-ok
+
+--conf-thres 0.5 recunoaste bine ultima poza spre deoseb de 0.25
+--conf-thres 0.9 nu mai recunoaste nici o poza
+--conf-thres 0.7 recunoaste bine si a 3-a poza
+--conf-thres 0.8 deja nu mai recunoaste 2 dintre poze
