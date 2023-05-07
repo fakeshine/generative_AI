@@ -44,13 +44,6 @@ images = model.text_to_image(prompt="A realistic image of a navy-colored zebra",
 # Plot the images
 plot_images(images)
 
-# Create images from text
-images_2nd_try = model.text_to_image(prompt="Generate an image of a navy-colored zebra. The background should be minimalistic and any color except for navy and white. Use a realistic style with shading and texture",
-                             batch_size=3)
-
-# Plot the images
-plot_images(images_2nd_try)
-
 # Commented out IPython magic to ensure Python compatibility.
 # Mount Google Drive
 from google.colab import drive
@@ -70,11 +63,4 @@ for i, image in enumerate(images):
   else:
     print(filename + " already exists")
 
-for i, image in enumerate(images_2nd_try):
-  filename = f"navy_zebra_2nd_try_{i+1}.jpeg"
-  if not os.path.isfile(filename):
-    Image.fromarray(image).save(filename)
-  else:
-    print(filename + " already exists")
-
-!pwd
+#!pwd
